@@ -98,7 +98,7 @@ function Game(noOfPlayers){
 
     this.finish = function(ele){
         if(this.winningPlayer === ''){
-            this.winningPlayer === ele.id;
+            this.winningPlayer = ele.id;
         }
         this.finishedPlayers++;
         if(this.finishedPlayers === this.noOfPlayers){
