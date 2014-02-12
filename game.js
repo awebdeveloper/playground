@@ -18,25 +18,18 @@ function Players(ele, ptimeout)
 			return ;
 		}
 
-		/* Move the Player*/
-		this.move((this.position + this.moveBy), this.i);
-
-		/* Prepare Next Move if a New Position exits */
-		if(this.i < this.movePositions.length ){
-			setTimeout(function(_this){	
-				_this.i++;
-				_this.animate();
-			},this.timeout,this);
-		}
-
-		/* End of positions recycle */
-		if(this.i == this.movePositions.length){
-
-			/* If end of race stop the game */
-			this.i = 0;
-			this.move((this.position + this.moveBy), this.i);
-			this.animate();
-		}
+		/* Prepare Next Move */
+		setTimeout(function(_this){	
+			if(_this.i < _this.movePositions.length ){
+				_this.i ++;
+			}
+			else{
+				_this.i = 0;
+			}
+			_this.move();
+			_this.animate();
+		},this.timeout,this);
+		
 	};
 
 	this.restart = function(){
@@ -56,10 +49,12 @@ function Players(ele, ptimeout)
 		}
 	};
 
-	this.move = function(to,positionIndex){
-		this.position = to;
+	this.move = function(to, positionIndex){
+		positionIndex	= positionIndex || this.i;
+		this.position	= to || (this.position + this.moveBy);
+
 		this.el.style.backgroundPosition = '-'+this.movePositions[positionIndex]+'px 0px';
-		this.el.style[getSupportedPropertyName('transform')] = 'translate('+to+'px)';
+		this.el.style[getSupportedPropertyName('transform')] = 'translate('+ this.position +'px)';
 	}
 }
 
