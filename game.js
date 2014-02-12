@@ -2,13 +2,13 @@ var racetrack		= document.getElementById('racetrack');
 
 function Players(ele, ptimeout)
 {
-	this.movePositions	= [0, 40, 80, 120],
-	this.moveBy			= 5
-	this.el = ele;
-	this.i = 0;
-	this.stop = 1;
-	this.timeout = ptimeout;
-	this.position = 0;
+	this.movePositions = [0, 40, 80, 120],
+	this.moveBy        = 5
+	this.el            = ele;
+	this.i             = 0;
+	this.stop          = 1;
+	this.timeout       = ptimeout;
+	this.position      = 0;
 
 	this.animate = function(){
 		/* Stop if stopped */
