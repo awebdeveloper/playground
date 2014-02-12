@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lucky Runner</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h1 class="center"> Lucky Runner </h1>
+	<section id="intro" >
+		<header>
+			<h2> Pick Who Wins </h2>
+		</header>
+		<div>
+			There are three runners who run. You need to pick the runner who you think will win.  
+		</div>
+		<p>&nbsp;</p>
+		<div class="center">
+			<select id="selectplayers">
+				<option value="">Select Player</option>
+				<option value="1"> 1 </option>
+				<option value="2"> 2 </option>
+				<option value="3"> 3 </option>
+			</select>
+			<button type="button" disabled id="startgame"> Start Game </button>
+		</div>
+	</section>
+	<div class="racetrack" id="racetrack" style="display:none;"></div>
+	<div id="track-tmpl" class="hide">
+		
+	</div>
+	<script type="text/javascript" src="util.js"></script>
+	<script type="text/javascript" src="game.js"></script>
+	<script type="text/javascript">
+		document.getElementById('selectplayers').addEventListener('change',function(){
+			if(this.options[this.selectedIndex].value !== ''){
+				this.nextElementSibling.removeAttribute('disabled');
+			}
+			else{
+				this.nextElementSibling.setAttribute("disabled","disabled");
+			}
+		});
+		
+		document.getElementById('startgame').addEventListener('click',function(){
+			document.getElementById('racetrack').style.display = 'block'; 
+			document.getElementById('intro').style.display = 'none';
+			var game = new Game(3);
+			game.play();
+		});
+	</script>
+</body>
+</html>
