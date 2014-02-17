@@ -10,7 +10,7 @@ body{
 }
 .track {
 	height:40px;
-	background-color:#0f0;
+	background-color:#9f9;
 	display:block;
 	min-width:100%;
 	float: left;
@@ -32,3 +32,124 @@ body{
 .center{
 	text-align: center;
 }
+.button {
+    background: #39f;
+    border:1px solid #99f;
+    padding: 7px 14px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+}
+.button:not([disabled]):hover{
+    background: #2bf;
+}
+
+.button[disabled]{
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.select {
+    padding: 5px;   
+}
+
+.input-append .select, .input-append .button{
+    margin:0;
+}
+
+.input-append .button{
+    border-radius: 0;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; 
+    display: table; 
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.win {
+	color: #19bb19;
+	font-size: 28px;
+	text-align: center;
+
+	-webkit-animation-name: pulse;
+	-moz-animation-name: pulse;
+	animation-name: pulse;
+
+	-webkit-animation-duration: 1s;
+	-moz-animation-duration: 1s;
+	animation-duration: 1s;
+
+	-webkit-animation-iteration-count: 100;
+	-moz-animation-iteration-count: 100;
+	animation-iteration-count: 100;
+}
+
+@keyframes "pulse" {
+	from {
+		-webkit-transform: scale(1.0);
+		-moz-transform: scale(1.0);
+		-o-transform: scale(1.0);
+		-ms-transform: scale(1.0);
+		transform: scale(1.0);
+	}
+	50% {
+		-webkit-transform: scale(1.4);
+		-moz-transform: scale(1.4);
+		-o-transform: scale(1.4);
+		-ms-transform: scale(1.4);
+		transform: scale(1.4);
+	}
+	to {
+		-webkit-transform: scale(1.0);
+		-moz-transform: scale(1.0);
+		-o-transform: scale(1.0);
+		-ms-transform: scale(1.0);
+		transform: scale(1.0);
+	}
+
+}
+
+@-moz-keyframes pulse {
+	from {
+		-moz-transform: scale(1.0);
+		transform: scale(1.0);
+	}
+	50% {
+		-moz-transform: scale(1.4);
+		transform: scale(1.4);
+	}
+	to {
+		-moz-transform: scale(1.0);
+		transform: scale(1.0);
+	}
+
+}
+
+@-webkit-keyframes "pulse" {
+	from {
+		-webkit-transform: scale(1.0);
+		transform: scale(1.0);
+	}
+	50% {
+		-webkit-transform: scale(1.4);
+		transform: scale(1.4);
+	}
+	to {
+		-webkit-transform: scale(1.0);
+		transform: scale(1.0);
+	}
+}
+
+
+
+
+
+

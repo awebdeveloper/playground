@@ -5,7 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<h1 class="center"> Lucky Runner </h1>
+	<h1 class="center"> Lucky Runner <span class="runner"></span> </h1>
 	<section id="intro" >
 		<header>
 			<h2> Pick Who Wins </h2>
@@ -15,18 +15,23 @@
 		</div>
 		<p>&nbsp;</p>
 		<div class="center">
-			<select id="selectplayers">
-				<option value="">Select Player</option>
-				<option value="1"> 1 </option>
-				<option value="2"> 2 </option>
-				<option value="3"> 3 </option>
-			</select>
-			<button type="button" disabled id="startgame"> Start Game </button>
+            <div class="input-append">
+                <select id="selectplayers" class="select">
+                    <option value="">Select Winning Player</option>
+                    <option value="1"> 1 </option>
+                    <option value="2"> 2 </option>
+                    <option value="3"> 3 </option>
+                </select><button class="button" type="button" disabled id="startgame" title="Select the player to begin the game"> Start Game </button>
+            </div>
 		</div>
 	</section>
 	<section class="racetrack"  id="racetrack"  style="display:none;"></section>
-	<section class="raceresult" id="raceresult" style="display:none;">
-			Winner is <output id="winnerresult"></output>
+	<section class="raceresult center" id="raceresult" style="display:none;">
+            <div class="">
+                <output id="winnerresult"></output>
+            </div>
+            <p>&nbsp;</p>
+            <a class="button" href=""> Play Again  </a>
 	</section>
 	<script type="text/javascript" src="util.js"></script>
 	<script type="text/javascript" src="game.js"></script>
@@ -43,7 +48,7 @@
 		document.getElementById('startgame').addEventListener('click',function(){
 			document.getElementById('racetrack').style.display = 'block'; 
 			document.getElementById('intro').style.display = 'none';
-			var game = new Game(3);
+			var game = new Game(3, document.getElementById('selectplayers').value);
 			game.play();
 		});
 	</script>
