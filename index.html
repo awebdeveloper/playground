@@ -15,13 +15,22 @@
 		</div>
 		<p>&nbsp;</p>
 		<div class="center">
-            <div class="input-append">
-                <select id="selectplayers" class="select">
-                    <option value="">Select Winning Player</option>
+            <div class="form-field clearfix">
+                <label>Select No Of Player: </label>
+                <input type="number" class="input"  min="3" value="3" id="noofplayers"/>
+            </div>
+            <div class="form-field clearfix">
+                <label>Select Winning Player: </label>
+                <select id="selectplayers" class="select input">
                     <option value="1"> 1 </option>
                     <option value="2"> 2 </option>
                     <option value="3"> 3 </option>
-                </select><button class="button" type="button" disabled id="startgame" title="Select the player to begin the game"> Start Game </button>
+                </select>
+            </div>
+            <div>
+                <button class="button" type="button" id="startgame" title="Select the player to begin the game"> 
+                    Start Game 
+                </button>
             </div>
 		</div>
 	</section>
@@ -36,21 +45,8 @@
 	<script type="text/javascript" src="util.js"></script>
 	<script type="text/javascript" src="game.js"></script>
 	<script type="text/javascript">
-		document.getElementById('selectplayers').addEventListener('change',function(){
-			if(this.options[this.selectedIndex].value !== ''){
-				this.nextElementSibling.removeAttribute('disabled');
-			}
-			else{
-				this.nextElementSibling.setAttribute("disabled","disabled");
-			}
-		});
-		
-		document.getElementById('startgame').addEventListener('click',function(){
-			document.getElementById('racetrack').style.display = 'block'; 
-			document.getElementById('intro').style.display = 'none';
-			var game = new Game(3, document.getElementById('selectplayers').value);
-			game.play();
-		});
+		var game = new Game();
+			game.init_game();
 	</script>
 </body>
 </html>

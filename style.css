@@ -52,7 +52,7 @@ body{
     cursor: not-allowed;
 }
 
-.select {
+.input,.select {
     padding: 5px;   
 }
 
@@ -148,8 +148,11 @@ body{
 	}
 }
 
-
-
-
-
-
+.form-field label{
+    width:200px;
+    float: left;
+}
+.form-field .input{
+    float:left;
+    width:50px;
+}
