@@ -83,11 +83,13 @@
 
             document.getElementById('noofplayers').addEventListener('change', function () {
                 var optionsHtml = '',
-                    i           = 0;
+                    i           = 0,
+                    noofplayers = parseInt(this.value, 10);
 
-                if (this.value < 3) {
-                    this.value = 3;
+                if (noofplayers < 3 || isNaN(noofplayers)) {
+                   noofplayers = 3;
                 }
+                this.value = noofplayers;
 
                 for (i = 1; i <= this.value; i += 1) {
                     optionsHtml = optionsHtml + '<option value="' + i + '">' + i + '</option>';

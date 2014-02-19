@@ -1,5 +1,7 @@
 body{
 	background: #f1f1f1;
+    font-size: 14px;
+    line-height: 20px;
 }
 .racetrack {
 	border-top: 3px solid red;
@@ -147,6 +149,7 @@ body{
 .form-field label{
     width: 180px;
     float: left;
+    padding-top: 5px;
 }
 .form-field .input{
     float:left;
