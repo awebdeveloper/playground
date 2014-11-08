@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<head>
+	<title>Test</title>
+	<script type="text/javascript" src="js/src/dimention.pquery.js"></script>
+	<script type="text/javascript" src="js/src/html.pquery.js"></script>
+	<script type="text/javascript" src="js/src/class.pquery.js"></script>
+	<script type="text/javascript" src="js/src/attr.pquery.js"></script>
+	<script type="text/javascript" src="js/src/style.pquery.js"></script>
+	<script type="text/javascript" src="js/src/effect.pquery.js"></script>
+	<script type="text/javascript" src="js/pquery.js"></script>
+	<style type="text/css">
+	.green {
+		background: #0f0;
+	}
+	</style>
+</head>
+
+
+<body>
+	<ul>
+		<li id="t1"><span>One</span></li>
+		<li><span>Two</span></li>
+		<li><span>Three</span></li>
+	</ul>
+	<div id="hhh">9</div>
+	<script type="text/javascript">
+
+		x = $('ul li');
+		
+		//console.log(x.dimention);
+		x.dimention().set('width','10')
+		 .dimention().set('height','120')
+		 .style().set({
+			'overflow': 'hidden',
+			'color': 'red'
+		  })
+		 .classes().toggle('green').and.toggle('green')
+		 .effect().fade('out');
+		
+		$(x[1]).effect().fade('out',5000);
+
+		
+		$('#hhh').html().set(
+			x.classes().get(), 
+			'append'
+		);
+		//$('#1');
+	</script>
+</body>
