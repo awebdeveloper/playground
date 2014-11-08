@@ -5,4 +5,5 @@ Figure out, out of the players who will be the fastest runner. Just bet with you
 
 There is nothing more to it.
 
-http://awebdeveloper.github.io/runners/
+http://awebdeveloper.github.io/playground/
+ 
