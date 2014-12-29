@@ -1,0 +1,16 @@
+<ion-list class="list">
+    <ion-item class="item item-avatar" ng-repeat="comment in comments">
+      <img ng-src="{{ comment.face }}" alt="user pic" title="{{ comment.name }}" />
+      <h2>{{ comment.name }}</h2>
+      <p>{{ comment.notes }}</p>
+    </ion-item>
+    <ion-item class="item">
+      <form ng-submit="sendChat(newChat)">
+          <label class="item item-input">
+            <input type="text" placeholder="What do you need to do?" ng-model="newChat.notes" />
+          <button type="submit" class="button button-right button-positive">Send</button>
+          </label>
+        </div>
+      </form>
+    </ion-item>
+</ion-list>

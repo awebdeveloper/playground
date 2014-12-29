@@ -1,0 +1,35 @@
+<div class="row item">
+  <div class="col col-75">
+    <div class="item-avatar">
+      <img src="{{ order.client.face }}">
+      <h2>{{ order.name }}</h2>
+      <p>November 05, 1955</p>
+    </div>
+  </div>
+  <div class="col ">
+    <div class="tabs-icon-right">
+      <span class="tab-item balanced" ng-hide="{{ !order.completed }}">
+        <i class="icon ion-thumbsup"></i>
+        Completed
+      </span>
+      <a class="tab-item" href="#" ng-hide="{{ order.completed }}">
+        <i class="icon ion-thumbsup"></i>
+        Completed
+      </a>
+    </div>
+  </div>
+</div>
+  
+<ion-list>
+  <ion-item>
+  	<b>Name</b> : {{ order.client.name }}
+  </ion-item>
+  <ion-item>
+  	<b>Last Text</b> : {{ order.lastText }}
+  </ion-item>
+</ion-list>
+<div class="item item-body">
+  <p>
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum..
+  </p>
+</div>
